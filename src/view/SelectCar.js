@@ -13,27 +13,14 @@ export default class SelectCar extends React.Component {
       <View style={{flex: 1}}>
         <StatusBar backgroundColor="blue" barStyle="light-content" />
         <View style={styles.container}>
-        <TouchableHighlight onPress={() => this.props.navigation.navigate('BrandView')} style={styles.button} >
+        <TouchableHighlight onPress={() => this.props.navigation.replace('BrandView')} style={styles.button} >
           <View style={styles.btnView}>
           <Image source={require('../img/question-mark-button32.png')} />
-          <Text style={styles.btnText}>  Select Brand</Text>
+          <Text style={styles.btnText}>  Select Brandgdgdfgdfgdfg</Text>
           </View>
         </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => this.selectPart()} style={styles.button} >
-          <View style={styles.btnView}>
-          <Image source={require('../img/question-mark-button32.png')} />
-          <Text style={styles.btnText}>  Select model</Text>
-          </View>
-        </TouchableHighlight>
 
-        <TouchableHighlight onPress={() => this.selectLocation()} style={styles.button} >
-          <View style={styles.btnView}>
-          <Image source={require('../img/question-mark-button32.png')} />
-          <Text style={styles.btnText}>  Select type</Text>
-          </View>
-
-        </TouchableHighlight>
         </View>
       </View>
       )

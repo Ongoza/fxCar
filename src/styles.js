@@ -12,6 +12,11 @@ export default styles = StyleSheet.create({
     flexDirection:'row',
     flexWrap:'wrap',
   },
+  buttonModal: {
+    backgroundColor: '#DDDDDD',
+     width:'30%',
+    padding: 4
+  },
   button: {
     marginTop: 2,
     backgroundColor: '#DDDDDD',
@@ -19,11 +24,19 @@ export default styles = StyleSheet.create({
     padding: 10
   },
   btnText:{
+    marginLeft: 18,
     textAlignVertical: "center",
-    justifyContent: 'center'
+    justifyContent: 'flex-start'
   },
  textLst:{
    textAlignVertical: "center",
    justifyContent: 'center'
- }
+ },
+ tmbCar:{
+   alignSelf: 'center',
+   height: 25,
+   width: 35,
+   borderWidth: 1,
+   borderRadius: 3
+ },
 });
