@@ -13,7 +13,7 @@ class HomeScreen extends Component {
 
 async componentDidMount() {
   let strArray =[];
-  console.log("!!!try get data from Home storage ");
+//  console.log("!!!try get data from Home storage ");
     try {
       const item1 = await AsyncStorage.getItem("Brand");
       this.setState({Brand:item1});
@@ -40,9 +40,9 @@ async componentDidMount() {
     } try {
       const item = await AsyncStorage.getItem("Location");
       this.setState({Location:item});
-        console.log("get data loc", item);
+      //  console.log("get data loc", item);
       strArray.push(" in "+item);
-      console.log("get data brand ", item);
+    //  console.log("get data brand ", item);
     } catch(e) {
       console.log("error get data", e);
     }
@@ -58,19 +58,19 @@ async componentDidMount() {
     async setKey(key,data) {
     try {
       await AsyncStorage.setItem(key, data);
-      console.log("set data ok");
+    //  console.log("set data ok");
     } catch (e) {
       console.log("error set data", e);
     }
   }
 
   ifCarExist(item1,item2,item3){
-    console.log(item1,item2,item3);
+  //  console.log(item1,item2,item3);
     let tr = false;
     if(item1&&item2&&item3){
       if (item1 in all_model_data){
         if(item2 in all_model_data[item1]){
-          console.log("data about a model is not empty.");
+        //  console.log("data about a model is not empty.");
           tr=true;
         }
       }
@@ -168,8 +168,9 @@ async componentDidMount() {
       }
   }
 
+
   showMenuResult(){
-    console.log("result of search");
+  //  console.log("result of search");
     dataArr = [
       {title:"Body ",text:"Spartan/ATK Engines Toyota 3UZFE 7/00-10", price:8000, currency:"USD", key: 'body', imgScr: require('../../img/atb.png')},
     ];
@@ -179,13 +180,14 @@ async componentDidMount() {
           data={dataArr}
           renderItem={({item}) => (
            <TouchableHighlight
-             onPress={() => this.onPress(item.title)}
+             onPress={() => this.props.navigation.navigate("PartDetails", { item: item })}
              // onShowUnderlay={separators.highlight}
              // onHideUnderlay={separators.unhighlight}
+             //style={{backgroundColor:'#EEEEE0', textAlign:'center'}}
              >
-             <View >
+             <View style={styles.btnView}>
              <Image style={styles.tmbCar} source = {item.imgScr} />
-               <Text style={{backgroundColor:'#EEEEE0', textAlign:'center'}} >{item.title}</Text>
+               <Text style={styles.btnText} >{item.text+" "+item.price+" "+item.currency}</Text>
              </View>
            </TouchableHighlight>
           )}

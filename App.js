@@ -10,7 +10,7 @@ import SelectYear from "./src/view/SelectYear";
 import SelectPart from "./src/view/SelectPart";
 import SelectLocation from "./src/view/SelectLocation";
 import styles from "./src/styles";
-
+import PartDetails from "./src/view/PartDetails"
 
 //const AppNavigator = createStackNavigator(AppRouteConfigs);
 const AppNavigator = createStackNavigator({
@@ -21,6 +21,7 @@ const AppNavigator = createStackNavigator({
   Year: { screen: SelectYear },
   Location: { screen: SelectLocation },
   Part: { screen: SelectPart },
+  PartDetails: {screen:PartDetails},
 });
 
 export default createAppContainer(AppNavigator);

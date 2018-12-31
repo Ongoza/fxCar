@@ -21,7 +21,8 @@ export default styles = StyleSheet.create({
     marginTop: 2,
     backgroundColor: '#DDDDDD',
      width:'95%',
-    padding: 10
+    padding: 10,
+     borderRadius:10,
   },
   btnText:{
     marginLeft: 18,

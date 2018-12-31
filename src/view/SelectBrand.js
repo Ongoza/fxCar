@@ -9,7 +9,7 @@ export default class SelectBrand extends React.Component {
       await AsyncStorage.setItem("Brand_temp", item.title);
       await AsyncStorage.setItem("Model_temp", "");
       await AsyncStorage.setItem("Year_temp", "");
-      console.log("set data ok");
+    //  console.log("set data ok");
     } catch (e) {
       console.log("error set data", e);
     }

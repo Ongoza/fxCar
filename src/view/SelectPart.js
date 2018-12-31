@@ -12,7 +12,7 @@ export default class SelectPart extends React.Component {
 
   async componentDidMount() {
     let strArray =[];
-    console.log("!!!try get data from Home storage ");
+  //  console.log("!!!try get data from Home storage ");
       try {
         const item1 = await AsyncStorage.getItem("Brand");
         strArray.push(item1);
@@ -21,7 +21,7 @@ export default class SelectPart extends React.Component {
         const item3 = await AsyncStorage.getItem("Year");
         strArray.push(item3);
         let strTemp = "Default car " + strArray.join(" ");
-        console.log("strTemp",strTemp);
+      //  console.log("strTemp",strTemp);
         if (this.ifCarExist(item1,item2,item3)){
           this.setState({brand:item1});
           this.setState({model:item2});
@@ -35,7 +35,7 @@ export default class SelectPart extends React.Component {
   }
 
   ifCarExist(item1,item2,item3){
-    console.log(item1,item2,item3);
+  //  console.log(item1,item2,item3);
     let tr = false;
     if(item1&&item2&&item3){
       if (item1 in all_model_data){
@@ -51,11 +51,11 @@ export default class SelectPart extends React.Component {
   async onPress(item){
     try{
         await AsyncStorage.setItem("Part",item);
-        console.log("save new item ", item);
+      //  console.log("save new item ", item);
       } catch(e){
         console.log("item replace error",e);
       }
-      console.log("part replaced");
+    //  console.log("part replaced");
   this.props.navigation.replace('Home');
 }
 

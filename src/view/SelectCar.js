@@ -5,7 +5,7 @@ import styles from "../styles";
 export default class SelectCar extends React.Component {
 
   onPress(item){
-   console.log("test brand");
+  // console.log("test brand");
   }
 
   render(){
